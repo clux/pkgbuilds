@@ -1,0 +1,4 @@
+---
+node: v6.10.2
+rust_ver: 1.16.0
+subl_build: 3126
