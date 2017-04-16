@@ -18,8 +18,7 @@ sha256sums=(
   'SKIP'
   'SKIP'
 )
-
-_validpgpkeys=(
+validpgpkeys=(
     9554F04D7259F04124DE6B476D5A82AC7E37093B
     94AE36675C464D64BAFA68DD7434390BDBE9B9C5
     FD3A5288F042B6850C66B31F09FE44734EB7990E
@@ -29,12 +28,19 @@ _validpgpkeys=(
     B9AE9905FFD7803F25714661B63B535A4C206CA9
     56730D5401028683275BD23C23EFEFE93C4CFFFE
 )
-gpg --keyserver pool.sks-keyservers.net --recv-keys "${_validpgpkeys[@]}"
-validpgpkeys=("${_validpgpkeys[@]}") # https://github.com/nodejs/node#release-team
 
 package() {
   cd "node-v${pkgver}"-linux-x64
-  install -dm644 . ${pkgdir}/usr/node
-  cp {bin,lib,include,share} -R ${pkgdir}/usr/node
+
+  # Install main files
+  install -d . ${pkgdir}/opt/${pkgname}
+  cp -a . ${pkgdir}/opt/${pkgname}
+
+  # Main binary symlinks
+  install -d "${pkgdir}/usr/bin"
+  ln -s "/opt/${pkgname}/bin/node" "${pkgdir}/usr/bin/node"
+  ln -s "/opt/${pkgname}/bin/npm" "${pkgdir}/usr/bin/npm"
+
+  # License
   install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/nodejs/LICENSE
 }
