@@ -14,10 +14,12 @@ sha256sums=('SKIP')
 package() {
   cd "${srcdir}/blackbox-${pkgver}"
 
-
-  # TODO: create opt/${pkgname}/{share,bin}
-  make manual-install "${pkgdir}/opt/${pkgname}"
+  # Copy bin files to /usr/bin
+  install -d "${pkgdir}/usr/bin"
+  for f in `find bin -type f -iname "*" ! -iname "Makefile"`; do
+    cp -a "$f" "${pkgdir}/usr/bin/"
+  done
 
   # License
-  install -D -m644 LICENSE.txt "$pkgdir/usr/share/licenses/${pkgdir}/LICENSE"
+  install -D -m644 LICENSE.txt "$pkgdir"/usr/share/licenses/${pkgname}/LICENSE
 }
