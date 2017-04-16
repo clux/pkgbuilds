@@ -1,0 +1,23 @@
+pkgname=blackbox-stackexchange
+pkgver=1.20170309
+pkgrel=1
+pkgdesc="Safely store secrets in Git/Mercurial/Subversion"
+arch=('i686' 'x86_64')
+url="https://github.com/StackExchange/blackbox"
+license=('MIT')
+depends=()
+conflicts=('')
+provides=('')
+source=("https://github.com/StackExchange/blackbox/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+  cd "${srcdir}/blackbox-${pkgver}"
+
+
+  # TODO: create opt/${pkgname}/{share,bin}
+  make manual-install "${pkgdir}/opt/${pkgname}"
+
+  # License
+  install -D -m644 LICENSE.txt "$pkgdir/usr/share/licenses/${pkgdir}/LICENSE"
+}

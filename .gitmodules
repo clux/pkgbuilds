@@ -1,0 +1,3 @@
+[submodule "sublime-text-dev"]
+	path = sublime-text-dev
+	url = https://aur.archlinux.org/sublime-text-dev.git
