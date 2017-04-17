@@ -9,9 +9,13 @@ depends=('openssl' 'zlib' 'icu')
 makedepends=('gnupg' 'curl')
 provides=('nodejs' 'npm')
 conflicts=('nodejs' 'npm')
-source=("https://nodejs.org/download/release/v$pkgver/node-v$pkgver-linux-x64.tar.gz")
+source=("https://nodejs.org/download/release/v$pkgver/node-v$pkgver-linux-x64.tar.gz"
+  "https://nodejs.org/download/release/v$pkgver/SHASUMS256.txt"{,.sig}
+)
 sha256sums=(
-  $(curl -s https://nodejs.org/download/release/v$pkgver/SHASUMS256.txt.asc | gpg -d 2>&1 | grep "node-v${pkgver}-linux-x64.tar.gz" | cut -f1 -d ' ')
+  "$(curl -s ${source[1]} | grep "node-v${pkgver}-linux-x64.tar.gz" | cut -f1 -d ' ')"
+  "SKIP"
+  "SKIP"
 )
 validpgpkeys=(
     9554F04D7259F04124DE6B476D5A82AC7E37093B
@@ -23,6 +27,7 @@ validpgpkeys=(
     B9AE9905FFD7803F25714661B63B535A4C206CA9
     56730D5401028683275BD23C23EFEFE93C4CFFFE
 ) # See https://github.com/nodejs/node#release-team
+gpg --keyserver pool.sks-keyservers.net --recv-keys "${validpgpkeys[@]}"
 
 package() {
   cd "node-v${pkgver}"-linux-x64
