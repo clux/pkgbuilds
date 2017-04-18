@@ -1,4 +1,4 @@
-pkgname=blackbox-stackexchange
+pkgname=blackbox-vcs
 pkgver=1.20170309
 pkgrel=1
 pkgdesc="Safely store secrets in Git/Mercurial/Subversion"
