@@ -1,3 +1,15 @@
 [submodule "sublime-text-dev"]
 	path = sublime-text-dev
 	url = https://aur.archlinux.org/sublime-text-dev.git
+[submodule "z"]
+	path = z
+	url = https://aur.archlinux.org/z.git
+[submodule "discord"]
+	path = discord
+	url = https://aur.archlinux.org/discord.git
+[submodule "ctop"]
+	path = ctop
+	url = https://aur.archlinux.org/ctop.git
+[submodule "google-chrome"]
+	path = google-chrome
+	url = https://aur.archlinux.org/google-chrome.git
