@@ -15,12 +15,6 @@ def get_node_version():
 
     return last_lts['version'][1:] # remove leading 'v'
 
-def get_stable_rust_version():
-    '''Hacky parsing of rust-lang download page to get latest stable version'''
-    resp = requests.get("https://www.rust-lang.org/en-US/install.html")
-    match = re.search(r'(\d+\.\d+\.\d+)', resp.text)
-    return match.group(1)
-
 def get_blackbox_release():
     '''Fetch latest github release of StackExchange/blackbox'''
     resp = requests.get("https://api.github.com/repos/StackExchange/blackbox/tags")
@@ -39,7 +33,6 @@ if __name__ == '__main__':
         VERSIONS = yaml.safe_load(file)
     print(VERSIONS)
     VERSIONS['blackbox'] = get_blackbox_release()
-    VERSIONS['rust'] = get_stable_rust_version()
     VERSIONS['node'] = get_node_version()
 
     # Write it down in a file for personal reference
@@ -49,4 +42,4 @@ if __name__ == '__main__':
 
     # More importantly propagate versions to PKGBUILD files
     bump_pkgver('nodejs-lts', VERSIONS['node'])
-    bump_pkgver('blackbox-vcs', VERSIONS['blackbox_version'])
+    bump_pkgver('blackbox-vcs', VERSIONS['blackbox'])
