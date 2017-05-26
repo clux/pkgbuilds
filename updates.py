@@ -1,10 +1,10 @@
 #!/usr/bin/env python
-import re
+'''Script to find canonical versions of own pkgbuilds in this repo'''
 import os
+import subprocess
 import requests
 import yaml
 import pyaml
-import subprocess
 
 VERSIONS_FILE = os.path.join('versions.yml')
 
@@ -24,7 +24,7 @@ def get_blackbox_release():
 
 def bump_pkgver(pkg, ver):
     '''Update pkgver line in PKGBUILD for a subdirectory'''
-    cmd = "sed -i s/pkgver=\.*/pkgver={}/ ./{}/PKGBUILD".format(ver, pkg)
+    cmd = "sed -i s/pkgver=.*/pkgver={}/ ./{}/PKGBUILD".format(ver, pkg)
     subprocess.Popen(cmd, shell=True)
 
 if __name__ == '__main__':
