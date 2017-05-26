@@ -1,4 +1,4 @@
 ---
-blackbox_version: 1.20170309
-node: v6.10.2
-rust_ver: 1.16.0
+blackbox: 1.20170309
+node: 6.10.3
+rust: 1.17.0

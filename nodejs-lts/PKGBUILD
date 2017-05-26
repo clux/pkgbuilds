@@ -1,5 +1,5 @@
 pkgname=nodejs-lts
-pkgver=6.10.2
+pkgver=6.10.3
 pkgrel=1
 pkgdesc='Evented I/O for V8 javascript - LTS release'
 arch=('x86_64')
