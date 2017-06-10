@@ -8,13 +8,6 @@ import pyaml
 
 VERSIONS_FILE = os.path.join('versions.yml')
 
-def get_node_version():
-    '''Find latest nodejs LTS version'''
-    resp = requests.get("https://nodejs.org/download/release/index.json")
-    last_lts = [v for v in resp.json() if v['lts']][0]
-
-    return last_lts['version'][1:] # remove leading 'v'
-
 def get_blackbox_release():
     '''Fetch latest github release of StackExchange/blackbox'''
     resp = requests.get("https://api.github.com/repos/StackExchange/blackbox/tags")
@@ -33,7 +26,6 @@ if __name__ == '__main__':
         VERSIONS = yaml.safe_load(file)
     print(VERSIONS)
     VERSIONS['blackbox'] = get_blackbox_release()
-    VERSIONS['node'] = get_node_version()
 
     # Write it down in a file for personal reference
     with open(VERSIONS_FILE, 'w') as file:
@@ -41,5 +33,4 @@ if __name__ == '__main__':
         print("Updated {}".format(VERSIONS_FILE))
 
     # More importantly propagate versions to PKGBUILD files
-    bump_pkgver('nodejs-lts', VERSIONS['node'])
     bump_pkgver('blackbox-vcs', VERSIONS['blackbox'])
