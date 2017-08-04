@@ -19,3 +19,6 @@
 [submodule "shellcheck-static"]
 	path = shellcheck-static
 	url = https://aur.archlinux.org/shellcheck-static.git
+[submodule "alacritty-git"]
+	path = alacritty-git
+	url = https://aur.archlinux.org/alacritty-git.git
