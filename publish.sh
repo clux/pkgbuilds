@@ -14,6 +14,7 @@ makepkg --printsrcinfo > "$1/.SRCINFO"
 cd "$1"
 git add PKGBUILD .SRCINFO
 git clux
-# review and push
+# review, try to build it, update sha256sum of new sources, and push
+
 
 # look over https://wiki.archlinux.org/index.php/Arch_User_Repository#Submitting_packages again
