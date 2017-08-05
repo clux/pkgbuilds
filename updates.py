@@ -5,20 +5,44 @@ import subprocess
 import requests
 import yaml
 import pyaml
+import hashlib
 
 VERSIONS_FILE = os.path.join('versions.yml')
 
+def get_github_release_info(owner, repo):
+    '''Fetch latest github release on owner/repo'''
+    url = 'https://api.github.com/repos/{}/{}/tags'.format(owner, repo)
+    print('GET: {}'.format(url))
+    resp = requests.get(url)
+    latest = resp.json()[0]
+    version = latest['name']
+    # NB: latest['tarball_url'] is a similar alternative - but using canonical
+    tar_url = 'https://github.com/{}/{}/archive/{}.tar.gz'.format(owner, repo, version)
+    print('SHA256SUM: {}'.format(tar_url))
+    tar_stream = requests.get(tar_url, stream=True)
+    m = hashlib.sha256()
+    for chunk in tar_stream.iter_content():
+        m.update(chunk)
+    return {
+        'version': version,
+        'shasum': m.hexdigest(),
+        'url': tar_url
+    }
+
 def get_blackbox_release():
     '''Fetch latest github release of StackExchange/blackbox'''
-    resp = requests.get("https://api.github.com/repos/StackExchange/blackbox/tags")
-    latest = resp.json()[0]
-    # NB: could use git, instead maybe, that way we have a sha (it's in the resp)
-    return latest['name'][1:] # slice away leading v
+    res = get_github_release_info('StackExchange', 'blackbox')
+    res['version'] = res['version'][1:] # slice away leading v
+    return res
 
-def bump_pkgver(pkg, ver):
-    '''Update pkgver line in PKGBUILD for a subdirectory'''
-    cmd = "sed -i s/pkgver=.*/pkgver={}/ ./{}/PKGBUILD".format(ver, pkg)
+
+def update_pkgbuild(pkg, info):
+    '''Update pkgver and sha256sum line in PKGBUILD for a subdirectory'''
+    cmd = "sed -i s/pkgver=.*/pkgver={}/ ./{}/PKGBUILD".format(info['version'], pkg)
     subprocess.Popen(cmd, shell=True)
+    cmd = "sed -i s/sha256sums=.*/sha256sums=\(\\\'{}\\\'\)/ ./{}/PKGBUILD".format(info['shasum'], pkg)
+    subprocess.Popen(cmd, shell=True)
+    # NB: url is already static (with pkgver referenced) in PKGBUILD
 
 if __name__ == '__main__':
     VERSIONS = None
@@ -33,4 +57,4 @@ if __name__ == '__main__':
         print("Updated {}".format(VERSIONS_FILE))
 
     # More importantly propagate versions to PKGBUILD files
-    bump_pkgver('blackbox-vcs', VERSIONS['blackbox'])
+    update_pkgbuild('blackbox-vcs', VERSIONS['blackbox'])
