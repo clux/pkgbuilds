@@ -22,3 +22,6 @@
 [submodule "alacritty-git"]
 	path = alacritty-git
 	url = https://aur.archlinux.org/alacritty-git.git
+[submodule "libc++"]
+	path = libc++
+	url = https://aur.archlinux.org/libc++.git
