@@ -13,9 +13,6 @@
 [submodule "google-chrome"]
 	path = google-chrome
 	url = https://aur.archlinux.org/google-chrome.git
-[submodule "terraform"]
-	path = terraform
-	url = https://aur.archlinux.org/terraform.git
 [submodule "shellcheck-static"]
 	path = shellcheck-static
 	url = https://aur.archlinux.org/shellcheck-static.git
