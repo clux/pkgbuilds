@@ -22,6 +22,12 @@
 [submodule "libc++"]
 	path = libc++
 	url = https://aur.archlinux.org/libc++.git
+[submodule "telegram-desktop-bin"]
+	path = telegram-desktop-bin
+	url = https://aur.archlinux.org/telegram-desktop-bin.git
+[submodule "slack-desktop"]
+	path = slack-desktop
+	url = https://aur.archlinux.org/slack-desktop.git
 [submodule "networkmanager-l2tp"]
 	path = networkmanager-l2tp
 	url = https://aur.archlinux.org/networkmanager-l2tp.git
