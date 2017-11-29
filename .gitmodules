@@ -22,3 +22,9 @@
 [submodule "libc++"]
 	path = libc++
 	url = https://aur.archlinux.org/libc++.git
+[submodule "networkmanager-l2tp"]
+	path = networkmanager-l2tp
+	url = https://aur.archlinux.org/networkmanager-l2tp.git
+[submodule "openswan"]
+	path = openswan
+	url = https://aur.archlinux.org/openswan.git
