@@ -34,3 +34,6 @@
 [submodule "kubernetes"]
 	path = kubernetes
 	url = https://aur.archlinux.org/kubernetes.git
+[submodule "kubernetes-helm"]
+	path = kubernetes-helm
+	url = https://aur.archlinux.org/kubernetes-helm.git
