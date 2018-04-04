@@ -22,9 +22,6 @@
 [submodule "libc++"]
 	path = libc++
 	url = https://aur.archlinux.org/libc++.git
-[submodule "telegram-desktop-bin"]
-	path = telegram-desktop-bin
-	url = https://aur.archlinux.org/telegram-desktop-bin.git
 [submodule "slack-desktop"]
 	path = slack-desktop
 	url = https://aur.archlinux.org/slack-desktop.git
@@ -37,6 +34,3 @@
 [submodule "kubernetes-helm"]
 	path = kubernetes-helm
 	url = https://aur.archlinux.org/kubernetes-helm.git
-[submodule "yq"]
-	path = yq
-	url = https://aur.archlinux.org/yq.git
