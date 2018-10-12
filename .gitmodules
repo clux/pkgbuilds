@@ -37,6 +37,3 @@
 [submodule "minikube"]
 	path = minikube
 	url = https://aur.archlinux.org/minikube.git
-[submodule "docker-machine-driver-kvm2"]
-	path = docker-machine-driver-kvm2
-	url = https://aur.archlinux.org/docker-machine-driver-kvm2.git
