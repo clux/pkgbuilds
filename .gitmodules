@@ -37,3 +37,6 @@
 [submodule "minikube"]
 	path = minikube
 	url = https://aur.archlinux.org/minikube.git
+[submodule "zoom"]
+	path = zoom
+	url = https://aur.archlinux.org/zoom.git
