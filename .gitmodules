@@ -40,3 +40,6 @@
 [submodule "zoom"]
 	path = zoom
 	url = https://aur.archlinux.org/zoom.git
+[submodule "wrk"]
+	path = wrk
+	url = https://aur.archlinux.org/wrk.git
