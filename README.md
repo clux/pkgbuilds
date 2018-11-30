@@ -12,6 +12,7 @@ git submodule update --recursive --remote
 
 ## Submitted to AUR
 - [blackbox-vcs](https://aur.archlinux.org/packages/blackbox-vcs/)
+- [jenq](https://aur.archlinux.org/packages/jenq/)
 
 ## Everything else
 Please ignore.
