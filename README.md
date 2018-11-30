@@ -6,7 +6,8 @@ Update pins and verify sanity of updated `PKGBUILD` files.
 
 ```sh
 git submodule update --recursive --remote
-./updates.py
+./updates.py # github source tarballs
+./update.py # github releases assets
 ```
 
 ## Submitted to AUR
