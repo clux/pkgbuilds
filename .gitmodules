@@ -49,3 +49,6 @@
 [submodule "keybase-bin"]
 	path = keybase-bin
 	url = ssh://aur@aur.archlinux.org/keybase-bin.git
+[submodule "teleport"]
+	path = teleport
+	url = https://aur.archlinux.org/teleport.git
