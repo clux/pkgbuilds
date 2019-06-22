@@ -52,3 +52,6 @@
 [submodule "teleport"]
 	path = teleport
 	url = https://aur.archlinux.org/teleport.git
+[submodule "hadolint-bin"]
+	path = hadolint-bin
+	url = https://aur.archlinux.org/hadolint-bin.git
