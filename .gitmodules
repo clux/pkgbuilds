@@ -52,3 +52,6 @@
 [submodule "hadolint-bin"]
 	path = hadolint-bin
 	url = https://aur.archlinux.org/hadolint-bin.git
+[submodule "kubectl-bin"]
+	path = kubectl-bin
+	url = https://aur.archlinux.org/kubectl-bin.git
