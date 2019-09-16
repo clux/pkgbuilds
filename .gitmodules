@@ -28,9 +28,6 @@
 [submodule "networkmanager-l2tp"]
 	path = networkmanager-l2tp
 	url = https://aur.archlinux.org/networkmanager-l2tp.git
-[submodule "kubernetes"]
-	path = kubernetes
-	url = https://aur.archlinux.org/kubernetes.git
 [submodule "kubernetes-helm"]
 	path = kubernetes-helm
 	url = https://aur.archlinux.org/kubernetes-helm.git
