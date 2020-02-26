@@ -4,9 +4,6 @@
 [submodule "z"]
 	path = z
 	url = https://aur.archlinux.org/z.git
-[submodule "discord"]
-	path = discord
-	url = https://aur.archlinux.org/discord.git
 [submodule "ctop"]
 	path = ctop
 	url = https://aur.archlinux.org/ctop.git
