@@ -46,3 +46,6 @@
 [submodule "hadolint-bin"]
 	path = hadolint-bin
 	url = https://aur.archlinux.org/hadolint-bin.git
+[submodule "yay"]
+	path = yay
+	url = https://aur.archlinux.org/yay.git
