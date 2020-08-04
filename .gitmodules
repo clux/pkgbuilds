@@ -49,3 +49,6 @@
 [submodule "yay"]
 	path = yay
 	url = https://aur.archlinux.org/yay.git
+[submodule "kubectl-bin"]
+	path = kubectl-bin
+	url = https://aur.archlinux.org/kubectl-bin.git
