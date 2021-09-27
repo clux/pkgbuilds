@@ -4,9 +4,6 @@
 [submodule "google-chrome"]
 	path = google-chrome
 	url = https://aur.archlinux.org/google-chrome.git
-[submodule "libc++"]
-	path = libc++
-	url = https://aur.archlinux.org/libc++.git
 [submodule "slack-desktop"]
 	path = slack-desktop
 	url = https://aur.archlinux.org/slack-desktop.git
