@@ -16,3 +16,9 @@ git submodule update --recursive --remote
 
 ## Everything else
 Please ignore.
+
+## Manual
+A couple of things we don't pin, they can be installed manually with `yay`:
+
+- hadolint-bin
+- shellcheck-bin
