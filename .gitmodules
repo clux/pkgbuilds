@@ -1,30 +1,6 @@
-[submodule "sublime-text-dev"]
-	path = sublime-text-dev
-	url = https://aur.archlinux.org/sublime-text-dev.git
-[submodule "google-chrome"]
-	path = google-chrome
-	url = https://aur.archlinux.org/google-chrome.git
-[submodule "slack-desktop"]
-	path = slack-desktop
-	url = https://aur.archlinux.org/slack-desktop.git
-[submodule "networkmanager-l2tp"]
-	path = networkmanager-l2tp
-	url = https://aur.archlinux.org/networkmanager-l2tp.git
-[submodule "zoom"]
-	path = zoom
-	url = https://aur.archlinux.org/zoom.git
-[submodule "wrk"]
-	path = wrk
-	url = https://aur.archlinux.org/wrk.git
 [submodule "blackbox-vcs"]
 	path = blackbox-vcs
 	url = ssh://aur@aur.archlinux.org/blackbox-vcs.git
 [submodule "keybase-bin"]
 	path = keybase-bin
 	url = ssh://aur@aur.archlinux.org/keybase-bin.git
-[submodule "yay"]
-	path = yay
-	url = https://aur.archlinux.org/yay.git
-[submodule "kubectl-bin"]
-	path = kubectl-bin
-	url = https://aur.archlinux.org/kubectl-bin.git
