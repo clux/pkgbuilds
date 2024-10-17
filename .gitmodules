@@ -1,6 +1,3 @@
-[submodule "blackbox-vcs"]
-	path = blackbox-vcs
-	url = ssh://aur@aur.archlinux.org/blackbox-vcs.git
 [submodule "keybase-bin"]
 	path = keybase-bin
 	url = ssh://aur@aur.archlinux.org/keybase-bin.git
